@@ -1,0 +1,153 @@
+/* payment.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  border: 1px solid transparent;
+}
+
+.btn-back:hover {
+  background-color: #5a6268;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .btn-back {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.method {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.method:hover {
+  background-color: #e5e7eb;
+}
+
+.details {
+  display: none;
+  margin-top: 10px;
+  border-top: 1px dashed #ccc;
+  padding-top: 10px;
+}
+
+.active .details {
+  display: block;
+}
+
+.qr-image {
+  max-width: 100%;
+  height: auto;
+}
+
+#qrisContainer {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Tambahan styling untuk sistem koin */
+.coin-calculator {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.coin-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.coin-input input {
+  width: 100px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.2em;
+}
+
+.price-info {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.payment-summary {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f1f8ff;
+  border-radius: 6px;
+}

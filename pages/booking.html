@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Booking</title>
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+  <section class="booking-section">
+    <a href="home.html" class="back-button">← Kembali</a>
+    <div class="container">
+      <h2>Form Booking Layanan</h2>
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group" id="addressGroup" style="display: none;">
+          <label for="address">Alamat Penjemputan:</label>
+          <textarea id="address" rows="3" placeholder="Masukkan alamat lengkap..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="date">Pilih Tanggal:</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Pilih Jam:</label>
+          <input type="time" id="time" required>
+        </div>
+
+        <div class="form-group">
+          <label>Layanan yang Dipilih:</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="service" value="cuci"> Cuci</label>
+            <label><input type="checkbox" name="service" value="pengering"> Pengering</label>
+            <label><input type="checkbox" name="service" value="setrika"> Setrika</label>
+            <label><input type="checkbox" name="service" value="pickup"> Antar Jemput</label>
+          </div>
+        </div>
+
+        <button type="submit">Kirim Booking</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const services = document.querySelectorAll('input[name="service"]:checked');
+
+      if (!date || !time) {
+        alert('Harap isi tanggal dan jam!');
+        return;
+      }
+
+      if (services.length === 0) {
+        alert('Pilih minimal 1 layanan!');
+        return;
+      }
+
+      alert('Booking berhasil!');
+      window.location.href = 'home.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+📝 SIGNUP PAGE
+Tujuan: Registrasi pengguna baru.
+
+-----------------------------
+|     DAFTAR AKUN BARU      |
+-----------------------------
+| Nama:      [___________]  |
+| Email:     [___________]  |
+| Password:  [___________]  |
+| Konfirmasi:[___________]  |
+|                             |
+| [ Daftar ]                 |
+| Sudah punya akun?          |
+| [ Login di sini ]          |
+-----------------------------

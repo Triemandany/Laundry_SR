@@ -1,0 +1,16 @@
+📅 BOOKING PAGE
+Tujuan: Pengguna memesan layanan laundry.
+
+------------------------------
+|        BOOKING LAUNDRY      |
+------------------------------
+| Pilih Tanggal: [📅]         |
+| Jenis Layanan:             |
+|  [ ] Cuci Kering           |
+|  [ ] Cuci Setrika          |
+|  [ ] Hanya Setrika         |
+| Berat Cucian (kg): [__]    |
+| Catatan Tambahan: [_____]  |
+|                            |
+| [ Submit Booking ]         |
+------------------------------

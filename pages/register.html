@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Akun</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Tombol kembali di pojok kiri atas */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: #2563eb;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: underline;
+      z-index: 1000;
+    }
+
+    .container-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    .info {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol kembali tetap di pojok kiri atas -->
+  <button class="back-button" onclick="window.location.href='login.html'">← Kembali</button>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <h2>Buat Akun Baru</h2>
+      <form id="signupForm">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email (opsional)</label>
+        <input type="email" id="email" name="email" placeholder="opsional@example.com">
+
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+62xxxxxxxxxx">
+
+        <button type="button" onclick="kirimOTP()">Kirim OTP</button>
+
+        <label for="otp">Masukkan Kode OTP</label>
+        <input type="number" id="otp" name="otp" required>
+
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Daftar</button>
+      </form>
+      <div class="info">
+        * Jika Anda tidak memiliki email, cukup isi nomor HP untuk menerima OTP.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function kirimOTP() {
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      if (email || phone) {
+        alert("Kode OTP telah dikirim ke " + (email ? email : phone));
+        // Di sini bisa ditambahkan logika pengiriman OTP ke server/API.
+      } else {
+        alert("Harap isi email atau nomor HP.");
+      }
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const otp = document.getElementById('otp').value;
+      const password = document.getElementById('password').value;
+
+      if (!name || !otp || !password) {
+        alert("Harap lengkapi semua kolom yang wajib diisi.");
+        return;
+      }
+
+      alert("Pendaftaran berhasil!");
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

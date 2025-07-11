@@ -1,0 +1,18 @@
+🏠 HOME PAGE
+Tujuan: Memberi informasi dasar dan akses cepat ke login/signup atau booking.
+
+-----------------------------------------------------
+| Laundry Koin Logo             [Login] [Signup]     |
+-----------------------------------------------------
+|       Selamat Datang di Laundry Koin!             |
+|  Hemat, Cepat, dan Mudah.                         |
+|                                                   |
+|  [Book Sekarang]                                  |
+|                                                   |
+|  Kenapa pilih kami?                               |
+|  ✓ Cepat & Bersih                                 |
+|  ✓ Bisa Booking Online                            |
+|  ✓ Transparan Harga                               |
+-----------------------------------------------------
+|                 © 2025 Laundry Koin               |
+-----------------------------------------------------

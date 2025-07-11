@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak Kami</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="home.html">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="logout-link">Keluar</a>
+      <a href="profile.html">
+        <img src="https://www.svgrepo.com/show/382106/account-avatar-profile-user-7.svg" alt="Profil" class="profile-icon">
+      </a>
+    </div>
+  </nav>
+
+  <!-- Konten Kontak -->
+  <section class="contact-section">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <p>Jika Anda memiliki pertanyaan, silakan hubungi kami melalui formulir di bawah ini:</p>
+
+      <div class="contact-grid">
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit">Kirim Pesan</button>
+        </form>
+
+        <div class="contact-info">
+          <h3>Informasi Kontak</h3>
+          <p>📞 +62 812-3456-7890</p>
+          <p>✉️ info@laundrycoin.com</p>
+          <p>📍 Jl. Contoh No. 123, Jakarta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

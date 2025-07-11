@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profil</title>
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Foto Profil" class="profile-img" />
+
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" value="Nama Lengkap" disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" value="emailkamu@email.com" disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Nomor HP:</label>
+        <input type="tel" id="phone" value="+62 812-3456-7890" disabled />
+      </div>
+
+      <div class="button-group">
+        <button id="edit-btn">Edit Profil</button>
+        <button id="save-btn" style="display: none;">Simpan</button>
+        <button id="cancel-btn" style="display: none;">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

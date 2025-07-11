@@ -1,0 +1,15 @@
+🔐 LOGIN PAGE
+Tujuan: Memberikan akses ke akun pengguna.
+
+-----------------------------
+|      LOGIN KE AKUN        |
+-----------------------------
+| Email:     [___________]  |
+| Password:  [___________]  |
+|                             |
+| [ Login ]                  |
+| [ Lupa password? ]         |
+| ------------------------- |
+| Belum punya akun?         |
+| [ Signup di sini ]        |
+-----------------------------

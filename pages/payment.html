@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pembayaran Coin</title>
+  <link rel="stylesheet" href="css/payment.css">
+  <!-- Tambahkan library QR Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="back-button">
+      <a href="home.html" class="btn-back">&larr;</a>
+    </div>
+
+    <h2>Pembayaran Coin</h2>
+    
+    <div class="coin-calculator">
+      <div class="coin-input">
+        <label>Jumlah Coin:</label>
+        <input type="number" id="coinAmount" min="1" value="1" oninput="calculateTotal()">
+        <span class="total-price" id="totalPrice">Rp 10.000</span>
+      </div>
+      <div class="price-info">
+        1 Coin = Rp 10.000
+      </div>
+    </div>
+
+    <div class="payment-methods">
+      <!-- Method Tunai -->
+      <div class="method" onclick="toggleDetails(this)">
+        <strong>Tunai</strong>
+        <div class="details">
+          <p>Silakan lakukan pembayaran langsung ke kasir dengan uang tunai.</p>
+          <div class="payment-summary">
+            Total Pembayaran: <span class="total-price" id="cashTotal">Rp 10.000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Method Transfer Bank -->
+      <div class="method" onclick="toggleDetails(this)">
+        <strong>Non Tunai - Transfer Bank</strong>
+        <div class="details">
+          <p>Transfer ke rekening berikut:</p>
+          <ul>
+            <li>Bank: BCA</li>
+            <li>No. Rekening: 1234567890</li>
+            <li>Atas Nama: PT Contoh</li>
+          </ul>
+          <div class="payment-summary">
+            Total Transfer: <span class="total-price" id="transferTotal">Rp 10.000</span>
+          </div>
+          <label>Bukti Transfer:</label>
+          <input type="text" placeholder="Masukkan link atau keterangan transfer">
+        </div>
+      </div>
+
+      <!-- Method QRIS -->
+      <div class="method" onclick="toggleDetails(this)">
+        <strong>Scan QR (QRIS)</strong>
+        <div class="details">
+          <p>Scan kode QR berikut untuk melakukan pembayaran:</p>
+          <div id="qrisContainer"></div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+          <div class="payment-summary">
+            Total Pembayaran: <span class="total-price" id="qrisTotal">Rp 10.000</span>
+          </div>
+          <label>Bukti Pembayaran:</label>
+          <input type="text" placeholder="Masukkan link atau keterangan pembayaran">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let qrCode = null;
+
+    function formatRupiah(angka) {
+      return 'Rp ' + angka.toLocaleString('id-ID');
+    }
+
+    function generateQRISPayload(amount) {
+      // Format payload QRIS (contoh sederhana)
+      const amountFormatted = amount.toString().padStart(10, '0');
+      return `00020101021226650014ID.CO.QRIS.WWW0215ID123456789010303UMI520454995303360540${amountFormatted}5502ID5908MERCHANT6005JAKARTA6105123406304`;
+    }
+
+    function updateQRCode(amount) {
+      const container = document.getElementById('qrisContainer');
+      const payload = generateQRISPayload(amount);
+      
+      // Hapus QR code sebelumnya
+      if (qrCode) {
+        qrCode.clear();
+        container.innerHTML = '';
+      }
+
+      // Generate QR code baru
+      qrCode = new QRCode(container, {
+        text: payload,
+        width: 256,
+        height: 256,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    function calculateTotal() {
+      const coinAmount = parseInt(document.getElementById('coinAmount').value) || 0;
+      const total = coinAmount * 10000;
+      
+      // Update semua harga
+      document.querySelectorAll('.total-price').forEach(element => {
+        element.textContent = formatRupiah(total);
+      });
+      
+      // Update QR code
+      updateQRCode(total);
+    }
+
+    function toggleDetails(element) {
+      const allMethods = document.querySelectorAll('.method');
+      allMethods.forEach(m => m.classList.remove('active'));
+      element.classList.add('active');
+      
+      // Jika yang dipilih QRIS, generate ulang QR code
+      if (element.querySelector('strong').textContent.includes('QRIS')) {
+        const total = parseInt(document.getElementById('coinAmount').value) * 10000;
+        updateQRCode(total);
+      }
+    }
+
+    // Inisialisasi pertama kali
+    calculateTotal();
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+👤 ACCOUNT PAGE
+Tujuan: Menampilkan informasi akun dan histori pemesanan.
+
+--------------------------------------------------
+| Hai, [Nama Pengguna]     [Logout]              |
+--------------------------------------------------
+| Email: [Email@contoh.com]                      |
+| Nomor HP: [0812xxxxxxx]                        |
+|                                               |
+| [ Edit Profil ] [Ubah Password]               |
+|                                               |
+| --- Histori Booking ---                      |
+| 1. Tanggal: 08 Apr 2025 - Status: Selesai     |
+| 2. Tanggal: 01 Apr 2025 - Status: Diproses    |
+--------------------------------------------------
